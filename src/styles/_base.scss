@@ -1,8 +1,21 @@
 body {
+  width: 100vw;
+  height: 500vh;
   margin: 0;
+  background-color: #3d1d2a;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

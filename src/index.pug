@@ -4,4 +4,11 @@ block title
   title open-animation-sample
 
 block body
-  a.btn(href="#") read more
+  a.btn.js-btn(href="#") read more
+  svg#svg.svg
+  .content.js-content
+    - var i = 0;
+    while i < 40
+      p.content__text Sit deleniti quos repudiandae eum neque soluta expedita non cumque quibusdam! Modi rerum quae corporis distinctio doloribus soluta! Magnam dolorum iste a laboriosam alias? Consectetur numquam ad esse facere voluptas.
+      - i++
+    span.content__close.js-close

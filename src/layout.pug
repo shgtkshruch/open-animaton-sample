@@ -20,7 +20,12 @@ html(lang="ja")
     block body
     // build:js scripts/vendor.js
     // bower:js
+    script(src='../bower_components/jquery/dist/jquery.js')
+    script(src='../bower_components/Snap.svg/dist/snap.svg-min.js')
+    script(src='../bower_components/animejs/anime.js')
     // endbower
     // endbuild
     // build:js scripts/main.js
+    // script(type="text/paperscript" canvas="canvas" src='scripts/effect-1.js')
+    script(src='scripts/effect-1.js')
     // endbuild
