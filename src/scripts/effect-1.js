@@ -15,6 +15,9 @@
   $btn.click((e) => {
     e.preventDefault();
 
+    // スクロールを無効にする
+    $body.css({ overflow: 'hidden' });
+
     $svg.show();
 
     circle.attr({
@@ -41,7 +44,6 @@
       easing: 'easeInOutExpo',
       autoplay: false,
       begin() {
-        $body.css({ overflow: 'hidden' });
         setTimeout(() => {
           $content.fadeIn();
         }, 600);
@@ -59,8 +61,6 @@
 
   $close.click(function (e) {
 
-    $body.css({ overflow: 'auto' });
-
     circle.attr({
       cx: e.pageX,
       cy: e.pageY,
@@ -76,9 +76,9 @@
       autoplay: false,
       complete() {
         $svg.hide();
-        circle.attr({
-          opacity: 1
-        });
+
+        // スクロールを有効にする
+        $body.css({ overflow: 'auto' });
       }
     });
 
