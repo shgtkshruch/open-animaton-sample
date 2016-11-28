@@ -4,11 +4,17 @@ block title
   title open-animation-sample
 
 block body
-  a.btn.js-btn(href="#") read more
+  - var i = 0;
+  - var sections = ['about', 'works', 'contact'];
+  while i < 3
+    section.section(class=`${sections[i]}`)
+      .content.js-content
+        - var j = 0;
+        while j < 40
+          p.content__text= sections[i]
+          - j++
+        span.content__close.js-close
+      a.btn.js-btn(href="#") read more
+    - i++
+
   svg#svg.svg
-  .content.js-content
-    - var i = 0;
-    while i < 40
-      p.content__text Sit deleniti quos repudiandae eum neque soluta expedita non cumque quibusdam! Modi rerum quae corporis distinctio doloribus soluta! Magnam dolorum iste a laboriosam alias? Consectetur numquam ad esse facere voluptas.
-      - i++
-    span.content__close.js-close

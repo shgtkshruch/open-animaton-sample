@@ -4,15 +4,20 @@
   const $svg = $('#svg');
   const $body = $('body');
   const $btn = $('.js-btn');
-  const $content = $('.js-content');
   const $close = $('.js-close');
 
   const svg = Snap('#svg');
   const circle = svg.circle('50%', '50%', 0);
 
+  let $content = '';
+
   console.log(anime.easings);
 
-  $btn.click((e) => {
+  $btn.click(function (e) {
+    console.log(e);
+
+    $content = $($(this).parents('.section').find('.content'));
+
     e.preventDefault();
 
     // スクロールを無効にする
@@ -21,8 +26,8 @@
     $svg.show();
 
     circle.attr({
-      cx: e.pageX,
-      cy: e.pageY,
+      cx: e.clientX,
+      cy: e.clientY,
       fill: '#fff',
       opacity: 0,
     });
@@ -62,8 +67,8 @@
   $close.click(function (e) {
 
     circle.attr({
-      cx: e.pageX,
-      cy: e.pageY,
+      cx: e.clientX,
+      cy: e.clientY,
       r: 2200,
       opacity: 1
     });
@@ -75,14 +80,12 @@
       easing: 'easeOutBounce',
       autoplay: false,
       complete() {
-        $svg.hide();
-
         // スクロールを有効にする
         $body.css({ overflow: 'auto' });
       }
     });
 
-    $(this).parent().fadeOut(200, () => {
+    $content.fadeOut(200, () => {
       shrinkAnime.play();
 
       setTimeout(() => {
