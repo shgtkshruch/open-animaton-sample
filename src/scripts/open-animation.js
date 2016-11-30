@@ -11,10 +11,10 @@
 
   let $content = '';
 
-  console.log(anime.easings);
+  // console.log(anime.easings);
 
   $btn.click(function (e) {
-    console.log(e);
+    // console.log(e);
 
     $content = $($(this).parents('.section').find('.content'));
 
@@ -25,6 +25,7 @@
 
     $svg.show();
 
+    // 円の位置をクリックした場所に合わせる
     circle.attr({
       cx: e.clientX,
       cy: e.clientY,
@@ -66,6 +67,7 @@
 
   $close.click(function (e) {
 
+    // 円の位置をクリックした場所に合わせる
     circle.attr({
       cx: e.clientX,
       cy: e.clientY,
