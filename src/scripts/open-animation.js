@@ -11,7 +11,7 @@
 
   let $content = '';
 
-  // console.log(anime.easings);
+  console.log(anime.easings);
 
   $btn.click(function (e) {
     // console.log(e);
@@ -78,21 +78,20 @@
     const shrinkAnime = anime({
       targets: '#svg circle',
       r: 0,
-      duration: 1500,
-      easing: 'easeOutBounce',
+      duration: 1000,
+      easing: 'easeInOutExpo',
+      elasticity: 400,
       autoplay: false,
       complete() {
         // スクロールを有効にする
         $body.css({ overflow: 'auto' });
+
+        $svg.fadeOut();
       }
     });
 
     $content.fadeOut(200, () => {
       shrinkAnime.play();
-
-      setTimeout(() => {
-        $svg.fadeOut();
-      }, 1100);
     });
   });
 
