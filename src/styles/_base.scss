@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
   margin: 0;
@@ -13,8 +19,6 @@ p {
   margin: 0;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+img {
+  max-width: 100%;
 }
