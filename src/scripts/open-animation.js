@@ -78,21 +78,25 @@
     const shrinkAnime = anime({
       targets: '#svg circle',
       r: 0,
-      duration: 1000,
+      duration: 1500,
       easing: 'easeInOutExpo',
       elasticity: 400,
       autoplay: false,
       complete() {
         // スクロールを有効にする
         $body.css({ overflow: 'auto' });
-
-        $svg.fadeOut();
       }
     });
 
-    $content.fadeOut(200, () => {
-      shrinkAnime.play();
-    });
+    shrinkAnime.play();
+
+    setTimeout(() => {
+      $content.fadeOut(200);
+    }, 500);
+
+    setTimeout(() => {
+     $svg.fadeOut(400);
+    }, 900);
   });
 
 })();
